@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Pop-up Retrô</title>
+<style>
+  body {
+    background-color: black;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 100px;
+  }
+  .window {
+    width: 350px;
+    border: 2px solid #000;
+    box-shadow: 3px 3px 0px #555;
+    background-color: #c0c0c0;
+    font-family: 'Tahoma', sans-serif;
+    font-size: 14px;
+    text-align: left;
+  }
+  .title-bar {
+    background-color: #0000aa;
+    color: white;
+    padding: 5px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .title-bar button {
+    background: #aaa;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+  }
+  .content {
+    display: flex;
+    padding: 15px;
+    gap: 10px;
+  }
+  .pixel-heart {
+    width: 32px;
+    height: 32px;
+    image-rendering: pixelated;
+  }
+  .buttons {
+    text-align: center;
+    padding: 10px;
+  }
+  .btn {
+    background-color: #e0e0e0;
+    border: 2px solid #999;
+    padding: 3px 10px;
+    cursor: pointer;
+    margin: 5px;
+  }
+</style>
+</head>
+<body>
+
+<script>
+function primeiraJanela() {
+  document.body.innerHTML = `
+    <div class="window" style="margin:auto;">
+      <div class="title-bar">
+        <span>Leia isso...</span>
+        <button onclick="segundaJanela()">X</button>
+      </div>
+      <div class="content">
+        <img src="https://i.imgur.com/Z8n7fbl.png" alt="Coração Pixel" class="pixel-heart">
+        <div>Deseja visualizar essa mensagem?</div>
+      </div>
+      <div class="buttons">
+        <button class="btn" onclick="segundaJanela()">Sim</button>
+        <button class="btn" onclick="segundaJanela()">Claro que sim</button>
+      </div>
+    </div>
+  `;
+}
+
+function segundaJanela() {
+  document.body.innerHTML = `
+    <div class="window" style="margin:auto;">
+      <div class="title-bar">
+        <span>Leia isso...</span>
+        <button onclick="window.close()">X</button>
+      </div>
+      <div class="content">
+        <img src="https://i.imgur.com/Z8n7fbl.png" alt="Coração Pixel" class="pixel-heart">
+        <div>
+          <b>Uma mensagem para você</b>
+          <p>Eu sei que talvez não devesse estar enviando esta mensagem, mas temo que eu nunca tenha outra chance.<br>
+          Lulu, eu te amo e eu quero ficar ao seu lado até o dia em que morrer.<br>
+          Não preciso que me responda; estarei aqui, pelo tempo que for, só quero que você saiba disso.</p>
+        </div>
+      </div>
+      <div class="buttons">
+        <button class="btn" onclick="window.close()">Fechar</button>
+      </div>
+    </div>
+  `;
+}
+
+primeiraJanela();
+</script>
+
+</body>
+</html>
